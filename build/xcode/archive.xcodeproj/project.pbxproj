@@ -288,6 +288,7 @@
 		77BACFB71C88F6F4009378A4 /* xxhash.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = xxhash.c; path = ../../libarchive/xxhash.c; sourceTree = "<group>"; };
 		77BAD1291C88F7DC009378A4 /* config_ios.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = config_ios.h; path = ../../libarchive/config_ios.h; sourceTree = "<group>"; };
 		77BAD12A1C88F7EA009378A4 /* filter_fork_ios.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = filter_fork_ios.c; path = ../../libarchive/filter_fork_ios.c; sourceTree = "<group>"; };
+		77BAD1391C88FC67009378A4 /* libarchive.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; name = libarchive.podspec; path = ../../libarchive.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,6 +305,7 @@
 		77BACCFD1C88F6BB009378A4 = {
 			isa = PBXGroup;
 			children = (
+				77BAD1391C88FC67009378A4 /* libarchive.podspec */,
 				77BACD121C88F6DF009378A4 /* libarchive */,
 				77BACD071C88F6BB009378A4 /* Products */,
 			);
@@ -774,6 +776,7 @@
 				77BACD111C88F6BB009378A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
