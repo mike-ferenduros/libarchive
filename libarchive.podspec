@@ -11,5 +11,5 @@ Pod::Spec.new do |spec|
   spec.exclude_files = 'libarchive/filter_fork_posix.c'
   spec.public_header_files = 'libarchive/archive.h', 'libarchive/archive_entry.h'
   spec.libraries    = 'z', 'bz2'
-  spec.compiler_flags = '-DPLATFORM_CONFIG_H=\"config_ios.h\"', '-Wno-shorten-64-to-32', '-Wno-unused-function', '-Wno-conditional-uninitialized'
+  spec.compiler_flags = '-DPLATFORM_CONFIG_H=\"config_ios.h\"', '-Wno-shorten-64-to-32', '-Wno-unused-function', '-Wno-conditional-uninitialized -Wno-comma'
 end
