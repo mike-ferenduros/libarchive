@@ -26,15 +26,9 @@
 #include "test.h"
 __FBSDID("$FreeBSD$");
 
-#ifdef HAVE_LIBZ
-static const int libz_enabled = 1;
-#else
-static const int libz_enabled = 0;
-#endif
-
 DEFINE_TEST(test_read_format_zip_traditional_encryption_data)
 {
-	/* This file is password protected (Traditional PKWARE Enctypted).
+	/* This file is password protected (Traditional PKWARE Encrypted).
 	   The headers are NOT encrypted. Password is "12345678". */
 	const char *refname =
 		"test_read_format_zip_traditional_encryption_data.zip";
@@ -42,7 +36,7 @@ DEFINE_TEST(test_read_format_zip_traditional_encryption_data)
 	struct archive *a;
 	char buff[512];
 
-	/* Check if running system has cryptographic functionarity. */
+	/* Check if running system has cryptographic functionality. */
 	assert((a = archive_write_new()) != NULL);
 	assertEqualIntA(a, ARCHIVE_OK, archive_write_set_format_zip(a));
 	assertEqualIntA(a, ARCHIVE_OK, archive_write_add_filter_none(a));
@@ -130,7 +124,7 @@ DEFINE_TEST(test_read_format_zip_traditional_encryption_data)
 	assertEqualInt(1, archive_entry_is_data_encrypted(ae));
 	assertEqualInt(0, archive_entry_is_metadata_encrypted(ae));
 	assertEqualIntA(a, 1, archive_read_has_encrypted_entries(a));
-	if (libz_enabled) {
+	if (archive_zlib_version() != NULL) {
 		assertEqualInt(495, archive_read_data(a, buff, sizeof(buff)));
 	} else {
 		assertEqualInt(ARCHIVE_FAILED,
@@ -148,7 +142,7 @@ DEFINE_TEST(test_read_format_zip_traditional_encryption_data)
 	assertEqualInt(1, archive_entry_is_data_encrypted(ae));
 	assertEqualInt(0, archive_entry_is_metadata_encrypted(ae));
 	assertEqualIntA(a, 1, archive_read_has_encrypted_entries(a));
-	if (libz_enabled) {
+	if (archive_zlib_version() != NULL) {
 		assertEqualInt(495, archive_read_data(a, buff, sizeof(buff)));
 	} else {
 		assertEqualInt(ARCHIVE_FAILED,
