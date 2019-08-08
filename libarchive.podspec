@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
   spec.name         = 'libarchive'
   spec.platform     = :ios
-  spec.version      = '3.2.1'
+  spec.version      = '3.4.0'
   spec.license      = { :type => 'Open Source', :file => 'COPYING' }
   spec.homepage     = 'http://www.libarchive.org'
   spec.authors      = 'Tim Kientzle', 'Michihiro NAKAJIMA', 'Andres Mejia'
